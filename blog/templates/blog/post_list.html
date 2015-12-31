@@ -8,6 +8,9 @@
             <h2>A sub-heading</h2>
             <h3>A sub-sub-heading</h3>
         </div>
+        {% for post in posts %}
+            {{ post }}
+        {% endfor %}
         <div>
             <h2>Hooray!</h2>
             <p>Hi <em>there!</em></p>
@@ -17,5 +20,12 @@
             <h1>Still working on it</h1>
             <p>This will be better in time</p>
         </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
